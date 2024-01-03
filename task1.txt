@@ -1,0 +1,41 @@
+import java.util.*;
+public class Task1 
+{
+    public static void main(String args[])
+    {
+         int min=1;
+         int max=100;
+         int random,n,attempt=1,i,j,count=0;
+         System.out.println("Welcome to Number Guessing Game");
+         random=(int)(Math.random()*(max-min+1)+min);
+         System.out.println("\nEnter any random number between 1 to 100:");
+         for(i=attempt;i<=3;i++)
+         {
+             for(j=0;j<3;j++)
+             {
+                Scanner sc=new Scanner(System.in);
+                n=sc.nextInt();
+                if(n<random)
+                {
+                     System.out.println("Failed. Too low!");
+                }
+                else if(n>random)
+                {
+                     System.out.println("Failed. Too high!");
+                }
+                else
+                {
+                     System.out.println("Congrates! The guessed number is correct");
+                     count++;
+                     break;
+                }
+             }
+            attempt++;  
+            if(attempt<4)
+            {
+                 System.out.println("\nPlay another round. Enter another number:");
+            }
+         }
+       System.out.println("\nTotal score:\nCorrect="+count+"\nFailed="+(3-count));
+    }
+}
