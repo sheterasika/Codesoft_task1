@@ -1,0 +1,57 @@
+import java.util.*;
+public class Task2 
+{
+    public static void main(String args[])
+    {
+         int math,bio,chem,phy,total;
+         float avg;
+         String grade;
+         System.out.println("Student Grade Calculator");
+         Scanner sc=new Scanner(System.in);
+         System.out.println("\nEnter the marks of subject Math(out of 100):");
+         math=sc.nextInt();
+         System.out.println("Enter the marks of subject Chemistry(out of 100):");
+         chem=sc.nextInt();
+         System.out.println("Enter the marks of subject Biology(out of 100):");
+         bio=sc.nextInt();
+         System.out.println("Enter the marks of subject Physics(out of 100):");
+         phy=sc.nextInt();
+        
+         total=math+chem+bio+phy;
+         System.out.println("\nTotal Marks of all subjects: "+total);
+         
+         avg=(float)total/4;
+         System.out.println("Average Marks: "+avg);
+         
+         if(avg>=90)
+         {
+             grade="A+";
+         }
+         else if(avg>=80)
+         {
+             grade="A";
+         }
+         else if(avg>=70)
+         {
+             grade="B+";
+         }
+         else if(avg>=60)
+         {
+             grade="C+";
+         }
+         else if(avg>=50)
+         {
+             grade="C";
+         }
+         else if(avg>=35)
+         {
+             grade="D";
+         }
+         else 
+         {
+             grade="Fail";
+         }
+         
+         System.out.println("Grade: "+grade);
+    }
+}
