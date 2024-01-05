@@ -1,0 +1,40 @@
+import java.util.*;
+public class Task3 
+{
+    public static void main(String args[])
+    {
+        double balance=20000,withdraw,deposit;
+        Scanner sc=new Scanner(System.in);
+        int ch;
+        do
+        {
+            System.out.println("\n1.Withdraw\n2.Deposit\n3.Check Balance\n4.Exit");
+            System.out.print("\nEnter your choice:");
+            ch=sc.nextInt();
+            switch(ch)
+            {
+                case 1:System.out.println("Enter the amount you want to withdraw:");
+                       withdraw=sc.nextInt();
+                       if(balance>=withdraw)
+                       {
+                         balance=balance-withdraw;  
+                         System.out.println("Done");
+                       }
+                       else
+                       {
+                           System.out.println("You have only "+balance+" in your account");
+                       }
+                       
+                       break;
+                case 2:System.out.println("Enter the amount you want to deposit:");
+                       deposit=sc.nextInt();
+                       balance=balance+deposit;
+                       System.out.println("Done");
+                       break;
+                case 3:System.out.println("Total Balance:"+balance);
+                       break;
+                case 4:System.exit(0);
+            }
+        }while(ch!=4); 
+    }
+}
